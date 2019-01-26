@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+	 <title><h:outputText value="#{msg.title}" /></title>
+	 <h1 align="center" style="color:blue;">Video Bar Donde Javier</h1>
+</h:head>
+
+<h:body>
+
+	<h:form id="form">
+		<p:panel id="panel" header="Registro de Personas">
+			<p:panelGrid columns="6" cellpadding="2">
+				
+				<p:outputLabel for="nombre" value="NOMBRE: "></p:outputLabel>
+				<p:inputText id="nombre" maxlength="20" required="true" value="#{personaMB.nombrePersona}"></p:inputText>
+				
+				<p:outputLabel for="apellido" value="APELLIDO: "></p:outputLabel>
+				<p:inputText id="apellido" maxlength="20" required="true" value="#{personaMB.apellidoPersona}"></p:inputText>
+				
+				<p:outputLabel for="telefono" value="TELÉFONO: "></p:outputLabel>
+				<p:inputNumber id="telefono" maxlength="20" required="true" value="#{personaMB.telefono}"></p:inputNumber>
+				
+				<p:outputLabel for="tipoPersona" value="TIPO DE PERSONA: "></p:outputLabel>
+				<p:selectOneMenu id="tipoPersona" required="true" value="#{personaMB.tipoPersona}">
+    					<f:selectItem itemLabel="SELECCIONAR" itemValue="" />
+            			<f:selectItem itemLabel="EMPLEADO" itemValue="E" />
+            			<f:selectItem itemLabel="CLIENTE" itemValue="C" />
+            	</p:selectOneMenu>
+				
+			</p:panelGrid>	
+			
+			<br></br>
+			
+			<p:commandButton value="GUARDAR" update="form,formTable" actionListener="#{personaMB.guardarPersona}" disabled="true" >
+    		</p:commandButton>
+			
+		</p:panel>
+		
+	</h:form>
+
+
+	<h:form id="formTable">
+		
+			<p:dataTable var="persona" value="#{personaMB.personas}" paginator="true" paginatorPosition="bottom" rows="10">
+				<f:facet name="header">
+        			Lista de Personas
+    			</f:facet>
+     
+				<p:column headerText="CÓDIGO">
+					<h:outputText value="#{persona.idPersona}"></h:outputText>
+				</p:column>
+				<p:column headerText="NOMBRES">
+					<h:outputText value="#{persona.nombrePersona}"></h:outputText>
+				</p:column>
+				<p:column headerText="APELLIDOS">
+					<h:outputText value="#{persona.apellidoPersona}"></h:outputText>
+				</p:column>
+				<p:column headerText="TELÉFONO">
+					<h:outputText value="#{persona.telefono}"></h:outputText>
+				</p:column>
+				<p:column headerText="TIPO PERSONA">			
+					<h:outputText value="#{persona.tipoPersona=='E'? 'Empleado' : 'Cliente'}"></h:outputText>
+				</p:column>
+				
+				<f:facet name="footer">
+        			En Total Hay #{personaMB.cantidad} Personas.
+  				  </f:facet>
+    
+			</p:dataTable>
+	</h:form>
+</h:body>
+
+
+</html>
