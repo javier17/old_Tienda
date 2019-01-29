@@ -22,13 +22,13 @@ public interface IManejadorCRUD<T,U>{
 	     * Crea el objeto de clase T que se pasa como parámetro en la base de datos
 	     * @param obj Instancia de la entidad T a almacenar en la base de datos
 	     */
-	   //public void guardar(T obj); arreglar
+	   public void crear(T obj); 
 
 	    /**
 	     * Crea una instancia de la clase T sin ningún valor seteado
 	     * @return Instancia de la entidad T sin valores asignados
 	     */
-	   // public T crear();
+	   public T crear();
 
 	    /**
 	     * Actualiza en base de datos el registro correspondiente al objeto de la entidad

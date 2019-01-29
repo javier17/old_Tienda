@@ -20,5 +20,13 @@ public class NegocioPersonaEJB {
 	public List<Persona> listarPersonas(){
 		return gestionPersonaDB.listar();
 	}
+	
+	public void crear(Persona persona) {
+		try {
+		gestionPersonaDB.crear(persona);
+		}catch (Exception e) {
+			System.out.println("Error al crear una persona en gestionPersonaEJB");
+		}
+	}
 
 }

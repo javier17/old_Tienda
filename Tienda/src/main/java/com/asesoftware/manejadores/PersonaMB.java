@@ -48,14 +48,23 @@ public class PersonaMB {
 		this.persona.setTelefono(telefono);
 		this.persona.setTipoPersona(tipoPersona);
 		try {
-			//Colocar método guardar
+			negocioPersonaEJB.crear(persona);
 			Mensaje.mostrarMensaje2("Persona regisrada exitosamente!!", "Info");
+			limpiarCampos();
+			listarPersonas();
 		}catch (Exception e) {
 			System.out.println("Error al guardar la persona en PersonaMB");
 			System.out.println(e.getMessage());
 			System.out.println(e.getCause());
 			e.printStackTrace();
 		}
+	}
+	
+	public void limpiarCampos() {
+		this.nombrePersona = null;
+		this.apellidoPersona = null;
+		this.telefono = null;
+		this.tipoPersona = null;
 	}
 
 	public Persona getPersona() {
