@@ -14,8 +14,10 @@
 </h:head>
 
 <h:body>
-
+	 
 	<h:form id="form">
+		<p:growl id="growl" sticky="true" showDetail="true" life="3000" />	
+		 
 		<p:panel id="panel" header="Registro de Personas">
 			<p:panelGrid columns="6" cellpadding="2">
 				
@@ -39,7 +41,7 @@
 			
 			<br></br>
 			
-			<p:commandButton value="GUARDAR" update="form,formTable" actionListener="#{personaMB.guardarPersona}" >
+			<p:commandButton value="GUARDAR" update="growl,form,formTable" actionListener="#{personaMB.guardarPersona}" >
     		</p:commandButton>
 			
 		</p:panel>
