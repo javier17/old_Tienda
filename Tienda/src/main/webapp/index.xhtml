@@ -2,22 +2,51 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:p="http://primefaces.org/ui">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
-<f:loadBundle basename="resources.application" var="msg"/>
+<f:loadBundle basename="resources.application" var="msg" />
 
 <h:head>
-	 
-	 <title><h:outputText value="#{msg.title}" /></title>
+	<title><h:outputText value="#{msg.title}" /></title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<link rel='stylesheet'
+		href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' />
+	<link rel="stylesheet" href="assets/css/reset.css" />
+	<link rel="stylesheet" href="assets/css/supersized.css" />
+	<link rel="stylesheet" href="assets/css/style.css" />
+	<div>
+	<h1 id="titulo"><br />VIDEO BAR DONDE JAVIER</h1>
+	</div>
+	
 </h:head>
 
 <h:body>
-	<h:form>
-		<p:panel id="panel" header="Lista de Productos" footer="Detalles"></p:panel>
-	</h:form>
+	<br /><br /><br /><br /><h1>Iniciar sesión</h1>
+		<h:form action="" method="post">
+			<input type="text" name="username" class="username" placeholder="Username" /> <input type="password" name="password" class="password" placeholder="Password" />
+			<button type="submit">Sign me in</button>
+			<div class="error">
+				<span>+</span>
+			</div>
+		</h:form>
+		<div class="connect">
+			<p>O conecte con:</p>
+			<p>
+				<a class="facebook"></a> <a class="twitter"></a>
+			</p>
+		</div>
+
+	
+
+	<!-- Javascript -->
+	<script src="assets/js/jquery-1.8.2.min.js"></script>
+	<script src="assets/js/supersized.3.2.7.min.js"></script>
+	<script src="assets/js/supersized-init.js"></script>
+	<script src="assets/js/scripts.js"></script>
+
 </h:body>
 
 
